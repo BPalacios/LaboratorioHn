@@ -2,6 +2,14 @@
 
 from odoo import models, fields, api
 
+class Paciente(models.Model):
+    _name = 'LaboratorioHN.Paciente'
+    _description = "Paciente del Laboratorio"
+
+    name = fields.Char(string="Paciente", required= True)
+    description = fields.Text()
+
+
 # class laboratorio_hn(models.Model):
 #     _name = 'laboratorio_hn.laboratorio_hn'
 

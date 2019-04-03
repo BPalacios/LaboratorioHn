@@ -3,20 +3,19 @@
     'name': "LaboratorioHn",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+       El siguiente modulo permite registrar los pacientes, registrar sus examenes e imprimirlos""",
 
     'description': """
-        Long description of module's purpose
+        El siguiente modulo administra las dependencias de un laboratorio clinico
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Alex Palacios",
+    'website': "http://www.LabChatoyer.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/12.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'Prueba',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
