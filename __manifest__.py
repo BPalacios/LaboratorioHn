@@ -11,7 +11,7 @@
     'website':'Pendiete',
     'data': [
         'security/ir.model.access.csv',
-        'views/paciente_vista.xml',
+        'views/paciente_vista.xml'
     ],
     'images':[],
     'license': 'AGPL-3',
