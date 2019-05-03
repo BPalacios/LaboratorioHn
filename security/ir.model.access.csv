@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_paciente_paciente,access.paciente.paciente,model_paciente_paciente,base.group_user,1,1,1,0
+administrador, Model admin access,model_paciente_paciente,laboratorio_hn.grupo_administrador,1,1,1,1
+usuario, Model user access,model_paciente_paciente,laboratorio_hn.grupo_usuario,1,0,0,0
