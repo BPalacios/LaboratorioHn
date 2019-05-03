@@ -13,8 +13,18 @@
         	</field>
         </record>
 
+
     	<menuitem id="laboratorio_menu"
-              	name="Laboratorio"/>
-    	<menuitem id="paciente_menu" parent="laboratorio_menu" name="Paciente"/>
+              	name="Laboratorio" sequence="10" groups="LaboratorioHn.grupo_administrador" />
+		<menuitem id="paciente_menu" parent="laboratorio_menu" name="Paciente" sequence="1"/>
+    	
+		<act_window  id="action_myconference"  
+      name="Manage Conferences"  
+      res_model="myconferences.myconf"
+      view_mode="tree,form"  />  
+  <menuitem  id="menu_myconference"  
+      name="Manage Conferences"  
+      action="action_myconference"  />  
+
 	</data>
 </odoo>
