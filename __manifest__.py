@@ -10,7 +10,7 @@
     'Company':'Centro Medico Chatoyer',
     'website':'Pendiete',
     'data': [
-        'views/paciente.xml',
+        'views/paciente_vista.xml',
     ],
     'images':[],
     'license': 'AGPL-3',
