@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': "LaboratorioHn",
-    'version': '0.1',
+    'version': '12.0.1.0.0',
     'summary':'Administra las gestiones del laboratorio',
     'category': 'Tools',
     'author': 'Alex Palacios, Hristo Oviedo',
