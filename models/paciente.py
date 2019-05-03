@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields
+from odoo import api, exceptions, models, fields, _
 
 class Paciente(models.Model):
     _name = 'paciente.paciente'
