@@ -10,15 +10,22 @@
     	<menuitem id="laboratorio_menu" name="Laboratorio"  />
 		<menuitem id="paciente_menu" parent="laboratorio_menu" name="Paciente" action="paciente_menu_action"/>
     	
+		<!--Espacio para pruebas-->
+		<record id="pacientes_tree_view" model="ir.ui.view">
+			<field name="name">Arbol de Pacientes</field>
+			<field name="model">paciente.paciente</field>
+			<field name="arch" type="xml">
+				<tree string="Pacientes">
+					<field name="pnombrePaciente"/>
+					<field name="papellidoPaciente"/>
+					<field name="edad"/>
+					<field name="genero"/>
+					<field name="tipodeSangre"/>
+					<field name="nacionalidadPaciente"/>
+				</tree>
+			</field>
+		</record>
 
-
-		<act_window  id="action_myconference"  
-      name="Manage Conferences"  
-      res_model="myconferences.myconf"
-      view_mode="tree,form"  />  
-  <menuitem  id="menu_myconference"  
-      name="Manage Conferences"  
-      action="action_myconference"  />  
 
 	</data>
 </odoo>
