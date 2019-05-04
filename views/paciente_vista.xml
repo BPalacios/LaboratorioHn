@@ -1,25 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 	<data>
-       <!-- <record  model="ir.actions.act_window" id="paciente_menu_action">
-        	<field name="name">Pacientes</field>
-        	<field name="res_model">paciente.paciente</field>
-        	<field name="view_type">form</field>
-        	<field name="view_mode">tree,form</field>
-        	<field name="domain">[]</field>
-        	<field name="help" type="html">
-            	<p class="oe_view_nocontent_create">Cree el primer Paciente
-            	</p>
-        	</field>
-        </record>-->
-		<act_window  id="paciente_menu_action"  
-      name="Pacientes"  
-      res_model="paciente.paciente"
-      view_mode="tree,form"  />  
+       <act_window  id="paciente_menu_action"  
+      	name="Pacientes"  
+      	res_model="paciente.paciente"
+      	view_mode="tree,form"  />  
 		
 
-    	<menuitem id="laboratorio_menu"
-              	name="Laboratorio"  />
+    	<menuitem id="laboratorio_menu" name="Laboratorio"  />
 		<menuitem id="paciente_menu" parent="laboratorio_menu" name="Paciente" action="paciente_menu_action"/>
     	
 
