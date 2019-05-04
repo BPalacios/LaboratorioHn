@@ -3,7 +3,8 @@
 from odoo import api, exceptions, models, fields, _
 
 class Paciente(models.Model):
-    _name = 'paciente.paciente'
+    _name = "paciente.paciente"
+    _description = 'Modelo para agregar pacientes'
     
     pnombrePaciente = fields.Char(string='Primer Nombre', required=True)
     snombrePaciente = fields.Char(string='Segundo Nombre')
