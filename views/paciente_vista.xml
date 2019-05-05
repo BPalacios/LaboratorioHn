@@ -4,13 +4,21 @@
        <act_window  id="paciente_menu_action"  
       	name="Pacientes"  
       	res_model="paciente.paciente"
-      	view_mode="tree,form"  />  
+      	view_mode="tree,form"  />
+
+
+
+		<act_window  id="orden_menu_action"  
+      	name="Orden"  
+      	res_model="paciente.orden"
+      	view_mode="tree,form"  />
 		
 
     	<menuitem id="laboratorio_menu" name="Laboratorio"  />
 		<menuitem id="paciente_menu" parent="laboratorio_menu" name="Paciente" action="paciente_menu_action"/>
+		<menuitem id="ordenes_menu" parent="laboratorio_menu" name="Orden" action="orden_menu_action"/>
     	
-		<!--Espacio para pruebas-->
+		<!--Vista del conjunto Pacientes-->
 		<record id="pacientes_tree_view" model="ir.ui.view">
 			<field name="name">Arbol de Pacientes</field>
 			<field name="model">paciente.paciente</field>
@@ -24,7 +32,47 @@
 					<field name="nacionalidadPaciente"/>
 				</tree>
 			</field>
-		</record>
+		</record> 
+		<!--Vista del Dato Paciente-->
+
+		<!--<record id="paciente_free_view" model="ir.ui.view">
+			<field name="name">Formato Paciente</field>
+			<field name="model">paciente.paciente</field>
+			<field name="arch" type="xml">
+				<form string="Paciente">
+					<sheet>
+						<field name="foto" widget="image" class="oe_left oe_avatar" />
+						<div class="oe_title">
+							<h3>
+								<field name="pnombrePaciente"/>
+								<field name="papellidoPaciente"/>
+							</h3>
+						</div>                    
+						<group>
+							<group>
+								<field name="edad"/>
+								<field name="genero"/>
+							</group>
+							<group>
+								<field name="fechaNaciemiento"/>
+								<field name="tipodeSangre"/>
+								<field name="nacionalidadPaciente"/>
+							</group>
+							<notebook>
+                            <page string="Description">
+                                <field name="sapellidoPaciente"/>
+                            </page>
+                            <page string="About">
+                                This is an example of notebooks
+                            </page>
+                        </notebook>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>-->
+
+
 
 
 	</data>
