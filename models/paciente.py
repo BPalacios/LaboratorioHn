@@ -34,20 +34,10 @@ class Orden(models.Model):
     
     fechaIngreso = fields.Date(string='Fecha Ingreso', default=datetime.today().date(), required=True)
     fechaImpresion = fields.Date(string='Fecha Impresion')
-    #pacienteOrden = fields.One2many('paciente.paciente', inverse_name='ordenPaciente', string='Pacientes')
-    
+    examenesOrden = fields.One2many('paciente.examen', inverse_name='orden', string='Examenes')
     pacienteOrden = fields.Many2one(comodel_name='paciente.paciente', string='Paciente')
     
-class Examen(models.Model):
-    _name = "paciente.examen"
-    _description = "Examenes especifico"
 
-    nombreExamen = fields.Char(string='Examen')
-    
-
-    #resultadoExamen = fields.Char(string='Resultado')
-    validacionExamen = fields.Boolean(string='Validado')
-    #quien lo valida, agregar tecnico o doctor
 
 
     
