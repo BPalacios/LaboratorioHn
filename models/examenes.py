@@ -130,6 +130,28 @@ class Alteracion(models.Model):
 
     alteracion = fields.Char(string='Alteracion')
     tipoAlteracion = fields.Char(string='Tipo Alteracion')
+
+
+
+
+class Bacteriologia(models.Model):
+    _inherit = 'paciente.examenes'
+
+    tipocultivo = fields.Char(string='Tipo Cultivo')
+    nColonias = fields.Char(string='Numero de colonias')
+    tipoBacteria = fields.Char(string='Tipo Bacteria')
+    observacion1 = fields.Text(string='Observacion 1')
+    observacion2 = fields.Text(string='Observacion 2')
+    observacion3 = fields.Text(string='Observacion 3')
+    
+    
+    
+    
+    
+    
+
+    name = fields.Char(string='Name')
+
     
     
 
