@@ -13,10 +13,18 @@ class Examen(models.Model):
     nombre = fields.Char(string='Examenen')
     resultado = fields.Char(string='Resultado')
     
-
-    #resultadoExamen = fields.Char(string='Resultado')
     validacionExamen = fields.Boolean(string='Validado')
-    #quien lo valida, agregar tecnico o doctor
+    realizadoPor = fields.Many2one(comodel_name='empleado.laboratorio', string='Realizado Por:')
+    
+
+
+class ModuleName(models.Model):
+    _name = 'empleado.laboratorio'
+    _description = 'Empleado de Laboratorio que valida el examen'
+
+    nombreCompleto = fields.Char(string='Nombre')
+    cargo = fields.Char(string='Cargo')
+    
 
 
 
@@ -143,21 +151,79 @@ class Bacteriologia(models.Model):
     observacion1 = fields.Text(string='Observacion 1')
     observacion2 = fields.Text(string='Observacion 2')
     observacion3 = fields.Text(string='Observacion 3')
+
+    #en antibigrama, un antibiotico solo debe ir en un lado, o sencible o resistente
     
-    
-    
-    
-    
+    antibiograma = fields.One2many(comodel_name='examen.antibiograma', inverse_name='examen', string='Antibioticos')
     
 
-    name = fields.Char(string='Name')
+class Antibigrama(models.Model):
+    _name = 'examen.antibiograma'
+    _description = 'Los antibioticos sencibles o resistentes'
+    examen = fields.Many2one(comodel_name='antibiograma', string='Examen')
+    
+    tipo = fields.Char(string='Sencible o resistente')
 
-    
+
+class Antibiotico(models.Model):
+    _name = 'examen.antibiotico'
+    _description = 'Antibioticos del Cultivo'
+
+    nombre = fields.Char(string='Nombre Antibiotico')
+
+
+
+class Citologia(models.Model):
+    _inherit = 'paciente.examenes'
+
+    calidadMuestra = fields.Char(string='Calidad de Muestra')
+    inflamacion = fields.Char(string='Inflamacion')
+    microorganismo = fields.Char(string='Microorganismo')
+    cambioRepReac = fields.Char(string='Cambio Reparativo Reactivo')
+    anormalidadesCelulares = fields.Char(string='Anormalidades Celulares')
+    tratamiento = fields.Text(string='Tratamiento')
+    observacion1 = fields.Text(string='Observacion 1')
+    observacion2 = fields.Text(string='Observacion 2')
+
+
+
+class Uroanalisis(models.Model):
+    _inherit = 'paciente.examenes'
+
+    color = fields.Char(string='Color')
+    olor = fields.Char(string='Olor')
+    aspecto = fields.Char(string='Aspecto')
+    densidad = fields.Char(string='Densidad')
+    ph = fields.Char(string='PH')
+    glucosa = fields.Char(string='Glucosa')
+    proteinas = fields.Char(string='Proteinas')
+    sangre = fields.Char(string='Sangre')
+    cetonas = fields.Char(string='Cetonas')
+    urobil = fields.Char(string='Urobilinogeno')
+    bilirrubina = fields.Char(string='Bilirrubina')
+    nitritos = fields.Char(string='Nitritos')
+    leucocitosQ = fields.Char(string='Leucocitos')
+    celulasEpiteliales = fields.Char(string='Celulas Epiteliales')
+    eritrocitos = fields.Char(string='Eritrocitos')
+    leucocitos = fields.Char(string='Leucocitos')
+    bacterias = fields.Char(string='Bacterias')
+    levaduras = fields.Char(string='Levaduras')
+    moco = fields.Char(string='Moco')
+    cilindros = fields.Char(string='Cilindros')
+    cristales = fields.Char(string='Cristales')
+    parasitos = fields.Char(string='Parasitos')
+    observacion1 = fields.Text(string='Observacion 1')
+    observacion2 = fields.Text(string='Observacion 2')
+    observacion3 = fields.Text(string='Observacion 3')
     
 
-    
-    
-    
-    
+class Tiempos_Coagulacion(models.Model):
+    _inherit = 'paciente.examenes'
+
+    tpPaciente = fields.Char(string='TP Paciente')
+    tpControl = fields.Char(string='TP Control')
+    ttpPaciente = fields.Char(string='TTP Paciente')
+    ttpControl = fields.Char(string='TTP Control')
+    INR = fields.Char(string='INR')
     
     
