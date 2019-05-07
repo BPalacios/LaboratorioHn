@@ -21,7 +21,7 @@ class Paciente(models.Model):
     	string='Grupo Sanguineo')
     
     nacionalidadPaciente = fields.Many2one('res.country', string='Nacionalidad')
-    ordenPaciente = fields.Many2one('paciente.orden', string='Orden')
+    #ordenPaciente = fields.Many2one('paciente.orden', string='Orden')
     
     #name = fields.Char(string='Nombre', computed = '_getname')
 
@@ -36,9 +36,27 @@ class Orden(models.Model):
     fechaImpresion = fields.Date(string='Fecha Impresion')
     #pacienteOrden = fields.One2many('paciente.paciente', inverse_name='ordenPaciente', string='Pacientes')
     
-    pacienteOrden = fields.Many2one(comodel_name='paciente.paciente', string='paciente')
+    pacienteOrden = fields.Many2one(comodel_name='paciente.paciente', string='Paciente')
     
-    
-    
+class Examen(models.Model):
+    _name = "paciente.examen"
+    _description = "Examenes especifico"
+
+    nombreExamen = fields.Char(string='Examen')
     
 
+    #resultadoExamen = fields.Char(string='Resultado')
+    validacionExamen = fields.Boolean(string='Validado')
+    #quien lo valida, agregar tecnico o doctor
+
+
+    
+
+
+    
+    
+    
+    
+    
+    
+    
