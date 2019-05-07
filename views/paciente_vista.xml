@@ -32,10 +32,12 @@
 					<field name="nacionalidadPaciente"/>
 				</tree>
 			</field>
-		</record> 
-		<!--Vista del Dato Paciente-->
+		</record>
 
-		<!--<record id="paciente_free_view" model="ir.ui.view">
+
+		<!--Vista del Dato Paciente-->
+		<!--
+		<record id="paciente_free_view" model="ir.ui.view">
 			<field name="name">Formato Paciente</field>
 			<field name="model">paciente.paciente</field>
 			<field name="arch" type="xml">
@@ -44,8 +46,9 @@
 						<field name="foto" widget="image" class="oe_left oe_avatar" />
 						<div class="oe_title">
 							<h3>
-								<field name="pnombrePaciente"/>
+								<field name="pnom"/>
 								<field name="papellidoPaciente"/>
+								<field name="name"/>
 							</h3>
 						</div>                    
 						<group>
@@ -70,8 +73,8 @@
 					</sheet>
 				</form>
 			</field>
-		</record>-->
-
+		</record>
+		-->
 
 
 

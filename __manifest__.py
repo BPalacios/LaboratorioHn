@@ -10,7 +10,7 @@
     'Company':'Centro Medico Chatoyer',
     'website':'Pendiete',
     'data': [
-        #'security/rules.xml',
+        'security/rules.xml',
         'security/ir.model.access.csv',
         'views/paciente_vista.xml'
     ],
