@@ -18,7 +18,7 @@ class Examen(models.Model):
     
 
 
-class ModuleName(models.Model):
+class EmpleadoLaboratorio(models.Model):
     _name = 'empleado.laboratorio'
     _description = 'Empleado de Laboratorio que valida el examen'
 
@@ -31,6 +31,9 @@ class ModuleName(models.Model):
 
 class ExamenQuimico(models.Model):
     _inherit = 'paciente.examen'
+
+    quimica = fields.Boolean(string='Quimica', default=False)
+    
 
     #Clavarle el nobre de quimicas generales o especiales
     listaExamenesQuimicos = fields.Many2one(comodel_name='examen.examenes', string='Examen')
@@ -53,7 +56,7 @@ class ValoresUnidades(models.Model):
     unidades = fields.Char(string='Unidades')
     
  
-
+"""
 
 class ExamenParasitologia(models.Model):
     _inherit = 'paciente.examen'
@@ -225,5 +228,5 @@ class Tiempos_Coagulacion(models.Model):
     ttpPaciente = fields.Char(string='TTP Paciente')
     ttpControl = fields.Char(string='TTP Control')
     INR = fields.Char(string='INR')
-    
+    """
     
