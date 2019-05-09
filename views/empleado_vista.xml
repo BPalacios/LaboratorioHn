@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		
+		<act_window  id="empleado_menu_action"  
+      	name="Empleado"  
+      	res_model="empleado.laboratorio"
+      	view_mode="tree,form"  />
+
+    	<menuitem id="laboratorio_menu" name="Laboratorio"  />
+		<menuitem id="empleados_menu" parent="laboratorio_menu" name="Empleado" action="empleado_menu_action"/>		
+		
+		<!--Vista del conjunto Empleados-->
+		<record id="examenes_tree_view" model="ir.ui.view">
+			<field name="name">Arbol de Empleados</field>
+			<field name="model">empleado.laboratorio</field>
+			<field name="arch" type="xml">
+				<tree string="Examenes">
+					<field name="nombreCompleto"/>
+					<field name="cargo"/>
+				</tree>
+			</field>
+		</record>
+
+		<!--Vista del Dato Examen-->
+		<record id="empleado_free_view" model="ir.ui.view">
+			<field name="name">Formato Empleado</field>
+			<field name="model">empleado.laboratorio</field>
+			<field name="arch" type="xml">
+				<form string="Empleado">
+					<sheet>            
+						<h1>
+							<group>
+								<field name="nombreCompleto"/>
+								<field name="cargo"/>
+							</group>
+						</h1>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- paciente.examen search view -->
+		<record id="examen_view_search" model="ir.ui.view">
+			<field name="name">empleado.laboratorio.view.search</field>
+			<field name="model">empleado.laboratorio</field>
+			<field name="arch" type="xml">
+				<search string="Busqueda de Empleados">
+					<field name="nombreCompleto"/>
+					<field name="cargo"/>
+				</search>
+			</field>
+		</record>
+	</data>
+</odoo>

@@ -12,7 +12,7 @@
 		<!--Vista del conjunto Examenes-->
 		<record id="examenes_tree_view" model="ir.ui.view">
 			<field name="name">Arbol de Examenes</field>
-			<field nam<field name="nombre"/>e="model">paciente.examen</field>
+			<field name="model">paciente.examen</field>
 			<field name="arch" type="xml">
 				<tree string="Examenes">
 					<field name="nombre"/>
