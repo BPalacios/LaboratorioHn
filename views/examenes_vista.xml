@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<act_window  id="examen_menu_action"  
+      	name="Examen"  
+      	res_model="paciente.examen"
+      	view_mode="tree,form"  />
+		
+    	<menuitem id="laboratorio_menu" name="Laboratorio"  />
+		<menuitem id="examenes_menu" parent="laboratorio_menu" name="Examen" action="examen_menu_action"/>
+		
+		<!--Vista del conjunto Examenes-->
+		<record id="examenes_tree_view" model="ir.ui.view">
+			<field name="name">Arbol de Examenes</field>
+			<field nam<field name="nombre"/>e="model">paciente.examen</field>
+			<field name="arch" type="xml">
+				<tree string="Examenes">
+					<field name="nombre"/>
+					<field name="resultado"/>
+					<field name="validacionExamen"/>
+					<field name="realizadoPor"/>
+				</tree>
+			</field>
+		</record>
+
+		<!--Vista del Dato Examen-->
+		<record id="examen_free_view" model="ir.ui.view">
+			<field name="name">Formato Examen</field>
+			<field name="model">paciente.examen</field>
+			<field name="arch" type="xml">
+				<form string="Examen">
+					<sheet>                    
+						<group>
+							<group>
+                                <field name="nombre"/>
+								<field name="resultado"/>
+							</group>
+							<group>
+								<field name="validacionExamen"/>
+								<field name="realizadoPor"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- paciente.examen search view -->
+		<record id="examen_view_search" model="ir.ui.view">
+			<field name="name">paciente.examen.view.search</field>
+			<field name="model">paciente.examen</field>
+			<field name="arch" type="xml">
+				<search string="Busqueda de Examenes">
+					<field name="nombre"/>
+					<field name="resultado"/>
+					<field name="realizadoPor"/>
+				</search>
+			</field>
+		</record>
+	</data>
+</odoo>
