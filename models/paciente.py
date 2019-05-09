@@ -7,10 +7,10 @@ class Paciente(models.Model):
     _description = 'Modelo para agregar pacientes'
     
     pnombrePaciente = fields.Char(string='Primer Nombre', required=True)
-    name = fields.Char(string='Segundo Nombre')
+    snombrePaciente = fields.Char(string='Segundo Nombre')
     papellidoPaciente = fields.Char(string='Primer Apellido', required=True)
     sapellidoPaciente = fields.Char(string='Segundo Apellido')
-    fechaNaciemiento = fields.Date(string="Fecha de Nacimiento")
+    fechaNacimiento = fields.Date(string="Fecha de Nacimiento")
     genero = fields.Selection([('masculino', 'Masculino'), ('femenino', 'Femenino'), ('otro', 'Otro')], string='Genero')
     edad = fields.Integer(string='Edad')
     foto = fields.Binary(string='Foto')

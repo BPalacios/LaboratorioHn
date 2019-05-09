@@ -10,7 +10,7 @@ class Examen(models.Model):
     #    ('General', 'General'), ('Quimica General', 'Quimica General'),
     #    ('Quimica Especial','Quimica Especial')],
     #    string="Tipo Examen")
-    nombre = fields.Char(string='Examenen')
+    nombre = fields.Char(string='Examen')
     resultado = fields.Char(string='Resultado')
     
     validacionExamen = fields.Boolean(string='Validado')

@@ -13,7 +13,7 @@
         'security/rules.xml',
         'security/ir.model.access.csv',
         'views/paciente_vista.xml',
-        'views/examenes_vista.xml'
+        #'views/examenes_vista.xml'
     ],
     'images':[],
     'license': 'AGPL-3',
