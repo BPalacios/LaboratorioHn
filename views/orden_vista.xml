@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<act_window  id="orden_menu_action"  
+      	name="Orden"  
+      	res_model="paciente.orden"
+      	view_mode="tree,form"  />
+
+    	<menuitem id="laboratorio_menu" name="Laboratorio"  />
+		<menuitem id="ordenes_menu" parent="laboratorio_menu" name="Orden" action="orden_menu_action"/>
+				
+		<!--Vista del conjunto Ordenes-->
+		<record id="ordenes_tree_view" model="ir.ui.view">
+			<field name="name">Arbol de Ordenes</field>
+			<field name="model">paciente.orden</field>
+			<field name="arch" type="xml">
+				<tree string="Ordenes">
+					<field name="fechaIngreso"/>
+					<field name="fechaImpresion"/>
+					<field name="examenesOrden"/>
+					<field name="pacienteOrden"/>
+				</tree>
+			</field>
+		</record>
+
+		<!--Vista del Dato Ordenes-->
+		<record id="orden_free_view" model="ir.ui.view">
+			<field name="name">Formato Orden</field>
+			<field name="model">paciente.orden</field>
+			<field name="arch" type="xml">
+				<form string="Orden">
+					<sheet>
+						<div class="oe_title">
+							<h2>
+								<field name="pacienteOrden"/>
+							</h2>
+						</div>                    
+						<group>
+							<group>
+								<field name="fechaIngreso"/>
+								<field name="fechaImpresion"/>
+								<field name="examenesOrden"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- paciente.orden search view -->
+		<record id="orden_view_search" model="ir.ui.view">
+			<field name="name">paciente.orden.view.search</field>
+			<field name="model">paciente.orden</field>
+			<field name="arch" type="xml">
+				<search string="Busqueda de Ordenes">
+					<field name="pacienteOrden"/>
+					<field name="fechaIngreso"/>
+					<field name="fechaImpresion"/>
+					<field name="examenesOrden"/>
+				</search>
+			</field>
+		</record>
+	</data>
+</odoo>
