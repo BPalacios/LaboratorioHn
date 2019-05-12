@@ -15,38 +15,12 @@ class Paciente(models.Model):
     edad = fields.Integer(string='Edad')
     foto = fields.Binary(string='Foto')
     direccionPaciente = fields.Char(string='Direccion')
-    tipodeSangre = fields.Selection(
-    	[('A+', 'A+ve'), ('B+', 'B+ve'), ('O+', 'O+ve'), ('AB+', 'AB+ve'),
-     	('A-', 'A-ve'), ('B-', 'B-ve'), ('O-', 'O-ve'), ('AB-', 'AB-ve')],
-    	string='Grupo Sanguineo')
+    #tipodeSangre = fields.Selection(
+    #	[('A+', 'A+ve'), ('B+', 'B+ve'), ('O+', 'O+ve'), ('AB+', 'AB+ve'),
+    # 	('A-', 'A-ve'), ('B-', 'B-ve'), ('O-', 'O-ve'), ('AB-', 'AB-ve')],
+    #	string='Grupo Sanguineo')
     
     nacionalidadPaciente = fields.Many2one('res.country', string='Nacionalidad')
     #ordenPaciente = fields.Many2one('paciente.orden', string='Orden')
     
     #name = fields.Char(string='Nombre', computed = '_getname')
-
-    
-
-
-class Orden(models.Model):
-    _name = "paciente.orden"
-    _description= "una orden determina que examen se hara"
-    
-    fechaIngreso = fields.Date(string='Fecha Ingreso', default=datetime.today().date(), required=True)
-    fechaImpresion = fields.Date(string='Fecha Impresion')
-    examenesOrden = fields.One2many('paciente.examen', inverse_name='orden', string='Examenes')
-    pacienteOrden = fields.Many2one(comodel_name='paciente.paciente', string='Paciente')
-    
-
-
-
-    
-
-
-    
-    
-    
-    
-    
-    
-    

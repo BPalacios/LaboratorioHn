@@ -3,3 +3,4 @@
 from . import paciente
 from . import examenes
 from . import empleados
+from . import orden
