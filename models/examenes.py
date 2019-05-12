@@ -43,8 +43,21 @@ class ListaExamenes(models.Model):
     _name= "examen.examenes"
     _description="Lista de todos los examenes habidos y por haber"
 
-    nombreExamen = fields.Char(string='Examen')
+    nombreExamen = fields.Char(string='Examen', required=True)
+    tipoExamen = fields.Selection(string='Tipo Examen', selection=[('general', 'General'), ('Quimica General', 'Quimica general'), 
+            ('Parasitologia', 'Parasitologia'),('Uroanalisis', 'Uroanalisis'),
+            ('Quimica Especial','Quimica Especial'), ('Bacteriologia','Baccteriologia')])
     valRef = fields.Many2one(comodel_name='examen.valoresunidades', string='Valor de Referencia')
+    unidades = fields.Char(related='valRef.unidades')
+    @api.multi
+    def name_get(self):
+        res = super(ListaExamenes, self).name_get()
+        data= []
+        for s in self:
+            name = s.nombreExamen
+            data.append((s.id, name))
+        return data
+    
     
 
 
@@ -54,6 +67,7 @@ class ValoresUnidades(models.Model):
 
     valorReferencia = fields.Char(string='Valor de Referencia')
     unidades = fields.Char(string='Unidades')
+
     
  
 """
