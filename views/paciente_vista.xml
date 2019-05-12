@@ -6,10 +6,10 @@
       	res_model="paciente.paciente"
       	view_mode="tree,form"  />
 
-		<act_window  id="orden_menu_action"  
+		<!--<act_window  id="orden_menu_action"  
       	name="Orden"  
       	res_model="paciente.orden"
-      	view_mode="tree,form"  />
+      	view_mode="tree,form"  />-->
 		
 		<act_window  id="empleado_menu_action"  
       	name="Empleado"  
@@ -23,7 +23,7 @@
 		
     	<menuitem id="laboratorio_menu" name="Laboratorio"  />
 		<menuitem id="paciente_menu" parent="laboratorio_menu" name="Paciente" action="paciente_menu_action"/>
-		<menuitem id="ordenes_menu" parent="laboratorio_menu" name="Orden" action="orden_menu_action"/>
+		<!--<menuitem id="ordenes_menu" parent="laboratorio_menu" name="Orden" action="orden_menu_action"/>-->
 		<menuitem id="empleados_menu" parent="laboratorio_menu" name="Empleado" action="empleado_menu_action"/>
 		<menuitem id="examenes_menu" parent="laboratorio_menu" name="Examen" action="examen_menu_action"/>
 		
@@ -38,7 +38,7 @@
 					<field name="papellidoPaciente"/>
 					<field name="edad"/>
 					<field name="genero"/>
-					<field name="tipodeSangre"/>
+					<!--<field name="tipodeSangre"/>-->
 					<field name="nacionalidadPaciente"/>
 				</tree>
 			</field>
@@ -89,7 +89,7 @@
 				<search string="Busqueda de Pacientes">
 					<field name="pnombrePaciente"/>
 					<field name="papellidoPaciente"/>
-					<field name="tipodeSangre"/>
+					<!--<field name="tipodeSangre"/>-->
 				</search>
 			</field>
 		</record>

@@ -1,6 +1,5 @@
 from odoo import api, exceptions, models, fields, _
 from datetime import datetime
-from . import paciente
 
 class Orden(models.Model):
     _name = "paciente.orden"

@@ -6,11 +6,7 @@ class Examen(models.Model):
     _description = "Examenes de cualquier indole"
 
     orden = fields.Many2one(comodel_name='paciente.orden', string='Orden')
-    #tipoExamen = fields.Selection(string='', selection=[
-    #    ('General', 'General'), ('Quimica General', 'Quimica General'),
-    #    ('Quimica Especial','Quimica Especial')],
-    #    string="Tipo Examen")
-    nombre = fields.Char(string='Examen')
+    nombre = fields.Many2one(comodel_name='examen.examenes', string='Nombre')
     resultado = fields.Char(string='Resultado')
     
     validacionExamen = fields.Boolean(string='Validado')
@@ -28,16 +24,6 @@ class EmpleadoLaboratorio(models.Model):
 
 
 
-
-class ExamenQuimico(models.Model):
-    _inherit = 'paciente.examen'
-
-    quimica = fields.Boolean(string='Quimica', default=False)
-    
-
-    #Clavarle el nobre de quimicas generales o especiales
-    listaExamenesQuimicos = fields.Many2one(comodel_name='examen.examenes', string='Examen')
-    #dentro de los valores de referencia van las unidades
     
 class ListaExamenes(models.Model):
     _name= "examen.examenes"
@@ -49,6 +35,15 @@ class ListaExamenes(models.Model):
             ('Quimica Especial','Quimica Especial'), ('Bacteriologia','Baccteriologia')])
     valRef = fields.Many2one(comodel_name='examen.valoresunidades', string='Valor de Referencia')
     unidades = fields.Char(related='valRef.unidades')
+    orden = fields.Many2one(comodel_name='paciente.orden', string='Orden')
+    @api.multi
+    def name_get(self):
+        data= []
+        for s in self:
+            name = s.nombreExamen
+            data.append((s.id, name))
+        return data
+    
     
     
 

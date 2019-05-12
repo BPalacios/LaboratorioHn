@@ -24,3 +24,10 @@ class Paciente(models.Model):
     #ordenPaciente = fields.Many2one('paciente.orden', string='Orden')
     
     #name = fields.Char(string='Nombre', computed = '_getname')
+    @api.multi
+    def name_get(self):
+        data= []
+        for s in self:
+            name = s.pnombrePaciente+' '+s.papellidoPaciente
+            data.append((s.id, name))
+        return data
