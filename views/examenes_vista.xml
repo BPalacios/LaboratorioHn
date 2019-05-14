@@ -24,7 +24,7 @@
 		</record>
 
 		<!--Vista del Dato Examen-->
-		<record id="examen_free_view" model="ir.ui.view">
+		<record id="examen_from_view" model="ir.ui.view">
 			<field name="name">Formato Examen</field>
 			<field name="model">paciente.examen</field>
 			<field name="arch" type="xml">
@@ -38,6 +38,9 @@
 							<group>
 								<field name="validacionExamen"/>
 								<field name="realizadoPor"/>
+							</group>
+							<group>
+								<field name="color"  attrs="{'invisible':[('nombre','==',"Gral. Heces")]}"  />
 							</group>
 						</group>
 					</sheet>

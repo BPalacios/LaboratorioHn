@@ -64,7 +64,7 @@ class ValoresUnidades(models.Model):
 
     
  
-"""
+
 
 class ExamenParasitologia(models.Model):
     _inherit = 'paciente.examen'
@@ -236,5 +236,5 @@ class Tiempos_Coagulacion(models.Model):
     ttpPaciente = fields.Char(string='TTP Paciente')
     ttpControl = fields.Char(string='TTP Control')
     INR = fields.Char(string='INR')
-    """
+    
     
