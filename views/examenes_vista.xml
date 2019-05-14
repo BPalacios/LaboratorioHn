@@ -40,7 +40,7 @@
 								<field name="realizadoPor"/>
 							</group>
 							<group>
-								<field name="color"  attrs="{'invisible':[('nombre','==',"Gral. Heces")]}"  />
+								<!--<field name="color"  attrs="{'invisible':[('nombre','==',"Gral. Heces")]}"  />-->
 							</group>
 						</group>
 					</sheet>
