@@ -154,7 +154,7 @@ class Alteracion(models.Model):
 
 
 class Bacteriologia(models.Model):
-    _inherit = 'paciente.examenes'
+    _inherit = 'paciente.examen'
 
     tipocultivo = fields.Char(string='Tipo Cultivo')
     nColonias = fields.Char(string='Numero de colonias')
@@ -185,7 +185,7 @@ class Antibiotico(models.Model):
 
 
 class Citologia(models.Model):
-    _inherit = 'paciente.examenes'
+    _inherit = 'paciente.examen'
 
     calidadMuestra = fields.Char(string='Calidad de Muestra')
     inflamacion = fields.Char(string='Inflamacion')
@@ -199,7 +199,7 @@ class Citologia(models.Model):
 
 
 class Uroanalisis(models.Model):
-    _inherit = 'paciente.examenes'
+    _inherit = 'paciente.examen'
 
     color = fields.Char(string='Color')
     olor = fields.Char(string='Olor')
@@ -229,7 +229,7 @@ class Uroanalisis(models.Model):
     
 
 class Tiempos_Coagulacion(models.Model):
-    _inherit = 'paciente.examenes'
+    _inherit = 'paciente.examen'
 
     tpPaciente = fields.Char(string='TP Paciente')
     tpControl = fields.Char(string='TP Control')
