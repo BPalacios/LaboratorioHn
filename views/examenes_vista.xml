@@ -33,14 +33,13 @@
 						<group>
 							<group>
                                 <field name="nombre"/>
-								<field name="resultado"/>
+								<field name="resultado" attrs="{
+								'invisible':[('nombre', '!=', 'Prueba de Embarazo')]
+								}"/>
 							</group>
 							<group>
 								<field name="validacionExamen"/>
 								<field name="realizadoPor"/>
-							</group>
-							<group>
-								<!--<field name="color"  attrs="{'invisible':[('nombre','==',"Gral. Heces")]}"  />-->
 							</group>
 						</group>
 					</sheet>
