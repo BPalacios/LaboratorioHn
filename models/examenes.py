@@ -11,7 +11,21 @@ class Examen(models.Model):
     
     validacionExamen = fields.Boolean(string='Validado')
     realizadoPor = fields.Many2one(comodel_name='empleado.laboratorio', string='Realizado Por:')
+    ultima_modificacion = fields.Date(string='Ultima Modificacion')
     
+
+    def write(self, values):
+
+        values['ultima_modificacion'] = fields.Datetime.now()
+
+        return super(Examen, self).write(values)
+    
+    def unlink(self):
+        for examen in self:
+            if examen.validacionExamen == True:
+                raise UserError("No puedes borrar un examen validado")
+        
+        return super(Examen, self).unlink()
 
 
 class EmpleadoLaboratorio(models.Model):

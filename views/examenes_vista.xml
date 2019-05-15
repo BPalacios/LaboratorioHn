@@ -24,18 +24,25 @@
 		</record>
 
 		<!--Vista del Dato Examen-->
-		<record id="examen_from_view" model="ir.ui.view">
+		<record id="examen_form_view" model="ir.ui.view">
 			<field name="name">Formato Examen</field>
 			<field name="model">paciente.examen</field>
 			<field name="arch" type="xml">
 				<form string="Examen">
-					<sheet>                    
+					<!--<header>
+						<field name="nombre" widget="statusbar" options="{'clickable': '1'}"/>
+					</header>-->
+					<sheet>
+						<div class="oe_title">
+							<h2>
+							<field name="nombre"/>
+							</h2>
+						</div>                    
 						<group>
 							<group>
-                                <field name="nombre"/>
-								<field name="resultado" attrs="{
-								'invisible':[('nombre', '!=', 'Prueba de Embarazo')]
-								}"/>
+								<field name="resultado"/>
+								<field name="antibiograma"/>
+								<field name="parasitologia"/>
 							</group>
 							<group>
 								<field name="validacionExamen"/>
@@ -59,5 +66,5 @@
 				</search>
 			</field>
 		</record>
-	</data>
+		</data>
 </odoo>

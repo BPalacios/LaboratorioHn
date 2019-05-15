@@ -17,7 +17,7 @@
 				<tree string="Ordenes">
 					<field name="fechaIngreso"/>
 					<field name="fechaImpresion"/>
-					<field name="examenesOrden" />
+					<field name="examenesOrden"/>
 					<field name="pacienteOrden"/>
 				</tree>
 			</field>
